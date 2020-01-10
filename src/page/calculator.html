@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+<div>Please enter parameters and select operation<br>
+
+        <table>
+            <tr>
+                <td>Parameter A</td>
+                <td><input type="text" id="a" name = "a"/></td>
+            </tr>
+            <tr>
+                <td>Parameter B</td>
+                <td><input type="text" id="b" name = "b"/></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" id="result" name = "result"/></td>
+            </tr>
+            <tr>
+                <td>Operation</td>
+                <td>
+                    <select id="operation">
+                        <option>+</option>
+                        <option>-</option>
+                        <option>*</option>
+                        <option>/</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 align=center>
+                    <input type="button" id="calc" name = "calc" value=Calculate></td>
+            </tr>
+        </table>
+
+</div>
+
+<script>
+    $(function(){
+        $('input[type=button]').on('click', function(event) {
+
+            console.log('kuku')
+            let a = $('#a').val();
+            let b = $('#b').val();
+            let operation = $('select option:selected').text();
+
+            switch(operation) {
+                case '+':
+                   $('#result:text').val(parseInt(a) + parseInt(b));
+                    break;
+                case '-':
+                    $('#result:text').val(a-b);
+                    break;
+                case '*':
+                    $('#result:text').val(a * b);
+                    break;
+                case '/':
+                    $('#result:text').val(a/b);
+                    break;
+
+            };
+
+        });
+    });
+
+
+</script>
+</body>
+
+
+</html>
