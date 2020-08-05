@@ -27,7 +27,7 @@ public class FirstSeleniumClass {
     public void init() {
 
 
-//			System.setProperty("webdriver.chrome.driver", "D:\\QA course\\Utils\\selenium\\drivers\\geckodriver.exe");
+      //  System.setProperty("webdriver.chrome.driver", "D:\\QA course\\Utils\\selenium\\drivers\\geckodriver.exe");
 //			driver = new FirefoxDriver();
 
         driver = new ChromeDriver();
@@ -37,6 +37,12 @@ public class FirstSeleniumClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
+
+    @Test
+    public void test1(){
+        driver.get(calculatorUrl);
+    }
+
     @After
     public void close() {
         driver.close();
@@ -44,21 +50,24 @@ public class FirstSeleniumClass {
     }
 
     @Test
-    public void testAddition() {
+    public void testAddition() throws InterruptedException {
         driver.get(calculatorUrl);
         WebElement parameterA = driver.findElement(By.id("a"));
         parameterA.sendKeys("10");
 
-        WebElement parameterB = driver.findElement(By.id("b"));
+
+
+       // WebElement parameterB = driver.findElement(By.id("b"));
+        WebElement parameterB = driver.findElement(By.xpath("//*[@id=\"b\"]"));
         parameterB.sendKeys("20");
 
         WebElement operation = driver.findElement(By.id("operation"));
-        operation.sendKeys("-");
+        operation.sendKeys("+");
 
         WebElement buttonCalculate = driver.findElement(By.name("calc"));
         buttonCalculate.click();
 
-        assertTrue(driver.findElement(By.name("result")).getAttribute("value").equals("-10"));
+        assertTrue(driver.findElement(By.name("result")).getAttribute("value").equals("30"));
 
 //
 //        driver.findElement(By.id("a")).sendKeys("1");
