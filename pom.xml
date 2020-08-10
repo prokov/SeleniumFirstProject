@@ -25,8 +25,15 @@
             </plugin>
         </plugins>
 
-
     </build>
+
+
+    <properties>
+        <cucumber.version>4.2.6</cucumber.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -54,6 +61,18 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.13.3</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>4.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>4.2.6</version>
         </dependency>
 
 
