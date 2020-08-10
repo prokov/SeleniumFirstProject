@@ -80,7 +80,7 @@ public class Automationpractice {
         //action2
         WebElement email = driver.findElement(By.id("email"));
         WebElement pass = driver.findElement(By.id("passwd"));
-        email.sendKeys("vkodimer@gmail.com");
+        email.sendKeys("vk@gmail.com");
         pass.sendKeys("12345678");
         WebElement loginBtn = driver.findElement(By.id("SubmitLogin"));
         loginBtn.click();
@@ -118,7 +118,7 @@ public class Automationpractice {
         //action2
         WebElement email = driver.findElement(By.id("email"));
         WebElement pass = driver.findElement(By.id("passwd"));
-        email.sendKeys("vkodimer1@gmail.com");
+        email.sendKeys("vk@gmail.com");
         pass.sendKeys("12345678");
         WebElement loginBtn = driver.findElement(By.id("SubmitLogin"));
         loginBtn.click();
